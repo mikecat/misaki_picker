@@ -15,15 +15,30 @@ window.addEventListener("DOMContentLoaded", async () => {
 		throw "font information load failed with status " + fontsInfoResponse.status;
 	}
 	const fontsInfo = await fontsInfoResponse.json();
+	const fontGroups = new Map();
+	fontsInfo.groups.forEach((groupInfo) => {
+		if (fontGroups.has(groupInfo.id)) {
+			console.warn("ignoring duplicate group id: " + groupInfo.id);
+		} else {
+			const optgroup = document.createElement("optgroup");
+			optgroup.setAttribute("label", groupInfo.name);
+			fontSelector.appendChild(optgroup);
+			fontGroups.set(groupInfo.id, optgroup);
+		}
+	});
 	const fonts = new Map();
-	fontsInfo.forEach((fontInfo) => {
+	fontsInfo.fonts.forEach((fontInfo) => {
 		if (fonts.has(fontInfo.id)) {
-			console.warn("duplicate id: " + fontInfo.id);
+			console.warn("ignoring duplicate font id: " + fontInfo.id);
 		} else {
 			const option = document.createElement("option");
 			option.setAttribute("value", fontInfo.id);
 			option.appendChild(document.createTextNode(fontInfo.name));
-			fontSelector.appendChild(option);
+			if (!("group" in fontInfo) || !fontGroups.has(fontInfo.group)) {
+				fontSelector.appendChild(option);
+			} else {
+				fontGroups.get(fontInfo.group).appendChild(option);
+			}
 			fonts.set(fontInfo.id, fontInfo);
 		}
 	});

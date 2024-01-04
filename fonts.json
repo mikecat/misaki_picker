@@ -1,83 +1,112 @@
-[
-	{
-		"id": "k6x8-gothic",
-		"name": "k6x8ゴシック",
-		"hanFile": "fonts/k6x8_png_2023-10-19/k6x8_jisx0201.png",
-		"zenFile": "fonts/k6x8_png_2023-10-19/k6x8_gothic_jisx0208.png",
-		"hanWidth": 3,
-		"zenWidth": 6,
-		"height": 8
-	},
-	{
-		"id": "k6x8-mincho",
-		"name": "k6x8明朝",
-		"hanFile": "fonts/k6x8_png_2023-10-19/k6x8_jisx0201.png",
-		"zenFile": "fonts/k6x8_png_2023-10-19/k6x8_mincho_jisx0208.png",
-		"hanWidth": 3,
-		"zenWidth": 6,
-		"height": 8
-	},
-	{
-		"id": "misaki-gothic",
-		"name": "美咲ゴシック",
-		"hanFile": "fonts/misaki_png_2021-05-05a/misaki_4x8.png",
-		"zenFile": "fonts/misaki_png_2021-05-05a/misaki_gothic.png",
-		"hanWidth": 4,
-		"zenWidth": 8,
-		"height": 8
-	},
-	{
-		"id": "misaki-mincho",
-		"name": "美咲明朝",
-		"hanFile": "fonts/misaki_png_2021-05-05a/misaki_4x8.png",
-		"zenFile": "fonts/misaki_png_2021-05-05a/misaki_mincho.png",
-		"hanWidth": 4,
-		"zenWidth": 8,
-		"height": 8
-	},
-	{
-		"id": "misaki-gothic-2",
-		"name": "美咲ゴシック第2",
-		"hanFile": "fonts/misaki_png_2021-05-05a/misaki_gothic_2nd_4x8.png",
-		"zenFile": "fonts/misaki_png_2021-05-05a/misaki_gothic_2nd.png",
-		"hanWidth": 4,
-		"zenWidth": 8,
-		"height": 8
-	},
-	{
-		"id": "k8x12",
-		"name": "k8x12",
-		"hanFile": "fonts/k8x12_png_2021-05-05/k8x12_jisx0201.png",
-		"zenFile": "fonts/k8x12_png_2021-05-05/k8x12_jisx0208.png",
-		"hanWidth": 4,
-		"zenWidth": 8,
-		"height": 12
-	},
-	{
-		"id": "k8x12-l",
-		"name": "k8x12L",
-		"hanFile": "fonts/k8x12_png_2021-05-05/k8x12L_jisx0201.png",
-		"zenFile": "fonts/k8x12_png_2021-05-05/k8x12L_jisx0208.png",
-		"hanWidth": 4,
-		"zenWidth": 8,
-		"height": 12
-	},
-	{
-		"id": "k8x12-s",
-		"name": "k8x12S",
-		"hanFile": "fonts/k8x12_png_2021-05-05/k8x12S_jisx0201.png",
-		"zenFile": "fonts/k8x12_png_2021-05-05/k8x12S_jisx0208.png",
-		"hanWidth": 4,
-		"zenWidth": 8,
-		"height": 12
-	},
-	{
-		"id": "k12x8",
-		"name": "k12x8",
-		"hanFile": "fonts/k12x8_png_2021-05-05/k12x8_jisx0201.png",
-		"zenFile": "fonts/k12x8_png_2021-05-05/k12x8_jisx0208.png",
-		"hanWidth": 6,
-		"zenWidth": 12,
-		"height": 8
-	}
-]
+{
+	"groups": [
+		{
+			"id": "k6x8",
+			"name": "6×8ドット日本語フォント「k6x8」"
+		},
+		{
+			"id": "misaki",
+			"name": "8×8ドット日本語フォント「美咲フォント」"
+		},
+		{
+			"id": "k8x12",
+			"name": "8×12ドット日本語フォント「k8x12」"
+		},
+		{
+			"id": "k12x8",
+			"name": "12×8ドット日本語フォント「k12x8」"
+		}
+	],
+	"fonts": [
+		{
+			"id": "k6x8-gothic",
+			"name": "k6x8ゴシック",
+			"group": "k6x8",
+			"hanFile": "fonts/k6x8_png_2023-10-19/k6x8_jisx0201.png",
+			"zenFile": "fonts/k6x8_png_2023-10-19/k6x8_gothic_jisx0208.png",
+			"hanWidth": 3,
+			"zenWidth": 6,
+			"height": 8
+		},
+		{
+			"id": "k6x8-mincho",
+			"name": "k6x8明朝",
+			"group": "k6x8",
+			"hanFile": "fonts/k6x8_png_2023-10-19/k6x8_jisx0201.png",
+			"zenFile": "fonts/k6x8_png_2023-10-19/k6x8_mincho_jisx0208.png",
+			"hanWidth": 3,
+			"zenWidth": 6,
+			"height": 8
+		},
+		{
+			"id": "misaki-gothic",
+			"name": "美咲ゴシック",
+			"group": "misaki",
+			"hanFile": "fonts/misaki_png_2021-05-05a/misaki_4x8.png",
+			"zenFile": "fonts/misaki_png_2021-05-05a/misaki_gothic.png",
+			"hanWidth": 4,
+			"zenWidth": 8,
+			"height": 8
+		},
+		{
+			"id": "misaki-mincho",
+			"name": "美咲明朝",
+			"group": "misaki",
+			"hanFile": "fonts/misaki_png_2021-05-05a/misaki_4x8.png",
+			"zenFile": "fonts/misaki_png_2021-05-05a/misaki_mincho.png",
+			"hanWidth": 4,
+			"zenWidth": 8,
+			"height": 8
+		},
+		{
+			"id": "misaki-gothic-2",
+			"name": "美咲ゴシック第2",
+			"group": "misaki",
+			"hanFile": "fonts/misaki_png_2021-05-05a/misaki_gothic_2nd_4x8.png",
+			"zenFile": "fonts/misaki_png_2021-05-05a/misaki_gothic_2nd.png",
+			"hanWidth": 4,
+			"zenWidth": 8,
+			"height": 8
+		},
+		{
+			"id": "k8x12",
+			"name": "k8x12",
+			"group": "k8x12",
+			"hanFile": "fonts/k8x12_png_2021-05-05/k8x12_jisx0201.png",
+			"zenFile": "fonts/k8x12_png_2021-05-05/k8x12_jisx0208.png",
+			"hanWidth": 4,
+			"zenWidth": 8,
+			"height": 12
+		},
+		{
+			"id": "k8x12-l",
+			"name": "k8x12L",
+			"group": "k8x12",
+			"hanFile": "fonts/k8x12_png_2021-05-05/k8x12L_jisx0201.png",
+			"zenFile": "fonts/k8x12_png_2021-05-05/k8x12L_jisx0208.png",
+			"hanWidth": 4,
+			"zenWidth": 8,
+			"height": 12
+		},
+		{
+			"id": "k8x12-s",
+			"name": "k8x12S",
+			"group": "k8x12",
+			"hanFile": "fonts/k8x12_png_2021-05-05/k8x12S_jisx0201.png",
+			"zenFile": "fonts/k8x12_png_2021-05-05/k8x12S_jisx0208.png",
+			"hanWidth": 4,
+			"zenWidth": 8,
+			"height": 12
+		},
+		{
+			"id": "k12x8",
+			"name": "k12x8",
+			"group": "k12x8",
+			"hanFile": "fonts/k12x8_png_2021-05-05/k12x8_jisx0201.png",
+			"zenFile": "fonts/k12x8_png_2021-05-05/k12x8_jisx0208.png",
+			"hanWidth": 6,
+			"zenWidth": 12,
+			"height": 8
+		}
+	]
+}
