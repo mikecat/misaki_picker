@@ -90,6 +90,17 @@ window.addEventListener("DOMContentLoaded", async () => {
 			}
 		} catch (e) {}
 	}
+	// 似た文字で一方しか登録されていないものにエイリアスをつける
+	const addAlias = (a, b) => {
+		if (chars.has(a) && !chars.has(b)) {
+			chars.set(b, chars.get(a));
+		} else if (chars.has(b) && !chars.has(a)) {
+			chars.set(a, chars.get(b));
+		}
+	};
+	addAlias("\u301c", "\uff5e"); // 波ダッシュ・全角チルダ
+	addAlias("\u005c", "\u00a5"); // バックスラッシュ・円マーク
+	addAlias("\u203e", "\uffe3"); // オーバーライン・全角オーバーライン
 
 	// 文字列を文字の配列に変換する (サロゲートペア考慮)
 	const strToChars = (str) => {
