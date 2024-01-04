@@ -175,6 +175,7 @@ window.addEventListener("DOMContentLoaded", async () => {
 	// フォント選択を保存する用
 	const fontSelectKey = "misaki_picker-1a394857-ee1a-4555-bef5-291f7a403381-font-select";
 	// フォント選択を読み込む
+	let fontSelectedFromLocalStorage = false;
 	if (window.localStorage) {
 		try {
 			const selectedFont = window.localStorage.getItem(fontSelectKey);
@@ -182,11 +183,20 @@ window.addEventListener("DOMContentLoaded", async () => {
 				for (let i = 0; i < fontSelector.options.length; i++) {
 					if (fontSelector.options[i].value === selectedFont) {
 						fontSelector.selectedIndex = i;
+						fontSelectedFromLocalStorage = true;
 						break;
 					}
 				}
 			}
 		} catch (e) {}
+	}
+	if (!fontSelectedFromLocalStorage) {
+		for (let i = 0; i < fontSelector.options.length; i++) {
+			if (fontSelector.options[i].value === fontsInfo.defaultFont) {
+				fontSelector.selectedIndex = i;
+				break;
+			}
+		}
 	}
 
 	// イベントハンドラを設定する

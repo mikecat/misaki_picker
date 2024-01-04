@@ -108,5 +108,6 @@
 			"zenWidth": 12,
 			"height": 8
 		}
-	]
+	],
+	"defaultFont": "misaki-gothic"
 }
