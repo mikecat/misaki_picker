@@ -146,11 +146,16 @@ window.addEventListener("DOMContentLoaded", async () => {
 				});
 				if (width < lineWidth) width = lineWidth;
 			});
+			const oldWidth = outputCanvas.width, oldHeight = outputCanvas.height;
 			outputCanvas.setAttribute("width", width);
 			outputCanvas.setAttribute("height", height);
 			outputCanvasWrapper.style.width = (width * 2) + "px";
 			outputCanvasWrapper.style.height = (height * 2) + "px";
 			const ctx = outputCanvas.getContext("2d", {"alpha": false});
+			if (oldWidth !== width || oldHeight !== height) {
+				ctx.fillStyle = fillerStyle;
+				ctx.fillRect(0, 0, width, height);
+			}
 			for (let y = 0; y < textLines.length; y++) {
 				const line = textLines[y];
 				let x = 0;
