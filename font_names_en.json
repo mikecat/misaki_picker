@@ -1,0 +1,19 @@
+{
+	"groups": {
+		"k6x8": "6×8-dot Japanese font \"k6x8\"",
+		"misaki": "8×8-dot Japanese font \"Misaki Font\"",
+		"k8x12": "8×12-dot Japanese font \"k8x12\"",
+		"k12x8": "12×8-dot Japanese font \"k12x8\""
+	},
+	"fonts": {
+		"k6x8-gothic": "k6x8 Gothic",
+		"k6x8-mincho": "k6x8 Mincho",
+		"misaki-gothic": "Misaki Gothic",
+		"misaki-mincho": "Misaki Mincho",
+		"misaki-gothic-2": "Misaki Gothic 2",
+		"k8x12": "k8x12",
+		"k8x12-l": "k8x12L",
+		"k8x12-s": "k8x12S",
+		"k12x8": "k12x8"
+	}
+}

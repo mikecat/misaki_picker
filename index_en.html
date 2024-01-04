@@ -1,17 +1,20 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="en">
 <head prefix="og: https://ogp.me/ns#">
 <meta charset="UTF-8">
-<title>美咲フォントピッカー</title>
-<meta property="og:title" content="美咲フォントピッカー" />
-<meta property="og:description" content="美咲フォントから使う文字だけを拾うツール。" />
-<meta property="og:url" content="https://mikecat.github.io/misaki_picker/" />
+<title>Misaki Font Picker</title>
+<meta property="og:title" content="Misaki Font Picker" />
+<meta property="og:description" content="A tool to pick characters to use from Misaki Font." />
+<meta property="og:url" content="https://mikecat.github.io/misaki_picker/index_en.html" />
 <meta property="og:image" content="https://mikecat.github.io/misaki_picker/misaki_ogp.png" />
 <meta property="og:type" content="website" />
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:site" content="@mikecat_mixc" />
 <link rel="icon" href="misaki.ico" />
 <link href="index.css" rel="stylesheet" />
+<script>
+const fontNameOverride = "font_names_en.json";
+</script>
 <script src="misaki_picker.js"></script>
 </head>
 <body>
@@ -19,7 +22,7 @@
 <!-- https://github.blog/2008-12-19-github-ribbons/ -->
 <a href="https://github.com/mikecat/misaki_picker"><img decoding="async" width="149" height="149" src="https://github.blog/wp-content/uploads/2008/12/forkme_right_gray_6d6d6d.png?resize=149%2C149" class="attachment-full size-full" alt="Fork me on GitHub" loading="lazy" data-recalc-dims="1"></a>
 </div>
-<h1>美咲フォントピッカー</h1>
+<h1>Misaki Font Picker</h1>
 <p>
 <select id="fontSelector" disabled="true"></select>
 </p>
@@ -27,17 +30,17 @@
 <textarea rows="10" cols="100" id="textField" disabled="true"></textarea>
 </p>
 <p>
-<button type="button" id="saveButton" disabled="true">画像保存</button>
-<label for="noUpdateCheck"><input type="checkbox" id="noUpdateCheck" disabled="true">画像の更新を停止</label>
+<button type="button" id="saveButton" disabled="true">Save Image</button>
+<label for="noUpdateCheck"><input type="checkbox" id="noUpdateCheck" disabled="true">Don't update the image</label>
 </p>
 <p>
 <span id="outputCanvasWrapper">
-<canvas id="outputCanvas" width="8" height="8">canvasに非対応です。</canvas>
+<canvas id="outputCanvas" width="8" height="8">canvas is not supported.</canvas>
 </span>
 </p>
 <hr>
-<p lang="en">
-<a href="index_en.html">English version</a>
+<p lang="ja">
+<a href="./">日本語版</a>
 </p>
 </body>
 </html>

@@ -15,13 +15,22 @@ window.addEventListener("DOMContentLoaded", async () => {
 		throw "font information load failed with status " + fontsInfoResponse.status;
 	}
 	const fontsInfo = await fontsInfoResponse.json();
+	let fontNames = {"groups": {}, "fonts": {}};
+	if (typeof fontNameOverride === "string") {
+		const fontNamesResponse = await fetch(fontNameOverride);
+		if (fontNamesResponse.ok) {
+			fontNames = await fontNamesResponse.json();
+		} else {
+			console.warn("font name load failed with status " + fontNamesResponse.status);
+		}
+	}
 	const fontGroups = new Map();
 	fontsInfo.groups.forEach((groupInfo) => {
 		if (fontGroups.has(groupInfo.id)) {
 			console.warn("ignoring duplicate group id: " + groupInfo.id);
 		} else {
 			const optgroup = document.createElement("optgroup");
-			optgroup.setAttribute("label", groupInfo.name);
+			optgroup.setAttribute("label", groupInfo.id in fontNames.groups ? fontNames.groups[groupInfo.id] : groupInfo.name);
 			fontSelector.appendChild(optgroup);
 			fontGroups.set(groupInfo.id, optgroup);
 		}
@@ -33,7 +42,7 @@ window.addEventListener("DOMContentLoaded", async () => {
 		} else {
 			const option = document.createElement("option");
 			option.setAttribute("value", fontInfo.id);
-			option.appendChild(document.createTextNode(fontInfo.name));
+			option.appendChild(document.createTextNode(fontInfo.id in fontNames.fonts ? fontNames.fonts[fontInfo.id] : fontInfo.name));
 			if (!("group" in fontInfo) || !fontGroups.has(fontInfo.group)) {
 				fontSelector.appendChild(option);
 			} else {
