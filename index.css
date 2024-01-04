@@ -1,0 +1,17 @@
+#textField {
+	max-width: 100%;
+}
+
+label[for="noUpdateCheck"] {
+	margin-left: 0.5em;
+}
+
+#outputCanvasWrapper {
+	display: inline-block;
+}
+
+#outputCanvas {
+	transform-origin: top left;
+	transform: scale(200%);
+	image-rendering: pixelated;
+}

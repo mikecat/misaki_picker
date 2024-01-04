@@ -1,0 +1,29 @@
+[
+	{
+		"id": "misaki-gothic",
+		"name": "美咲ゴシック",
+		"hanFile": "misaki_png_2021-05-05a/misaki_4x8.png",
+		"zenFile": "misaki_png_2021-05-05a/misaki_gothic.png",
+		"hanWidth": 4,
+		"zenWidth": 8,
+		"height": 8
+	},
+	{
+		"id": "misaki-mincho",
+		"name": "美咲明朝",
+		"hanFile": "misaki_png_2021-05-05a/misaki_4x8.png",
+		"zenFile": "misaki_png_2021-05-05a/misaki_mincho.png",
+		"hanWidth": 4,
+		"zenWidth": 8,
+		"height": 8
+	},
+	{
+		"id": "misaki-gothic-2",
+		"name": "美咲ゴシック第2",
+		"hanFile": "misaki_png_2021-05-05a/misaki_gothic_2nd_4x8.png",
+		"zenFile": "misaki_png_2021-05-05a/misaki_gothic_2nd.png",
+		"hanWidth": 4,
+		"zenWidth": 8,
+		"height": 8
+	}
+]

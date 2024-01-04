@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>美咲フォントピッカー</title>
+<link rel="icon" href="misaki.ico" />
+<link href="index.css" rel="stylesheet" />
+<script src="misaki_picker.js"></script>
+</head>
+<body>
+<h1>美咲フォントピッカー</h1>
+<p>
+<select id="fontSelector" disabled="true"></select>
+</p>
+<p>
+<textarea rows="10" cols="100" id="textField" disabled="true"></textarea>
+</p>
+<p>
+<button type="button" id="saveButton" disabled="true">画像保存</button>
+<label for="noUpdateCheck"><input type="checkbox" id="noUpdateCheck" disabled="true">画像の更新を停止</label>
+</p>
+<p>
+<span id="outputCanvasWrapper">
+<canvas id="outputCanvas" width="8" height="8">canvasに非対応です。</canvas>
+</span>
+</p>
+</body>
+</html>
