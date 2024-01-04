@@ -122,6 +122,8 @@ window.addEventListener("DOMContentLoaded", async () => {
 	const unknownCharStyle = "#FF8080";
 	const fontLoadErrorStyle = "#FFFF80";
 	const fillerStyle = "#C0C0C0";
+	const tabStyle = "#FFFFFF";
+	const tabStop = 4;
 	const renderWaits = [];
 	const render = async () => {
 		// 一度に1個ずつ実行させる
@@ -142,7 +144,12 @@ window.addEventListener("DOMContentLoaded", async () => {
 			textLines.forEach((line) => {
 				let lineWidth = 0;
 				line.forEach((c) => {
-					lineWidth += chars.has(c) && chars.get(c).type === "han" ? font.hanWidth : font.zenWidth;
+					if (c === "\t") {
+						const tabWidth = font.hanWidth * tabStop;
+						lineWidth += tabWidth - lineWidth % tabWidth;
+					} else {
+						lineWidth += chars.has(c) && chars.get(c).type === "han" ? font.hanWidth : font.zenWidth;
+					}
 				});
 				if (width < lineWidth) width = lineWidth;
 			});
@@ -161,7 +168,13 @@ window.addEventListener("DOMContentLoaded", async () => {
 				let x = 0;
 				for (let i = 0; i < line.length; i++) {
 					const c = line[i];
-					if (chars.has(c)) {
+					if (c === "\t") {
+						const tabWidth = font.hanWidth * tabStop;
+						const drawWidth = tabWidth - x % tabWidth;
+						ctx.fillStyle = tabStyle;
+						ctx.fillRect(x, font.height * y, drawWidth, font.height);
+						x += drawWidth;
+					} else if (chars.has(c)) {
 						const charInfo = chars.get(c);
 						const img = await loadImage(charInfo.type === "han" ? font.hanFile : font.zenFile);
 						const drawWidth = charInfo.type === "han" ? font.hanWidth : font.zenWidth;
