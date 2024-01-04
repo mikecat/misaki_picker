@@ -67,15 +67,17 @@ window.addEventListener("DOMContentLoaded", async () => {
 	// 文字から座標に変換するテーブルを作成する
 	const chars = new Map();
 	const decoder = new TextDecoder("shift_jis", { fatal: true });
-	for (let one = 0x81; one <= 0xfc; one++) {
+	for (let one = 0x81; one <= 0xef; one++) {
 		if (one === 0xa0) one = 0xe0;
 		for (let two = 0x40; two <= 0xfc; two++) {
 			if (two === 0x7f) continue;
-			let y = 2 * (one - 0x81 - (one >= 0xe0 ? 0x40 : 0)) + (two >= 0xa0 ? 1 : 0);
+			let y = 2 * (one - 0x81 - (one >= 0xe0 ? 0x40 : 0)) + (two >= 0x9f ? 1 : 0);
 			let x = (two - 0x40 - (two >= 0x80 ? 1 : 0)) % 94;
 			try {
 				const decoded = decoder.decode(new Uint8Array([one, two]));
-				chars.set(decoded, {"type": "zen", "x": x, "y": y});
+				if (!chars.has(decoded)) {
+					chars.set(decoded, {"type": "zen", "x": x, "y": y});
+				}
 			} catch (e) {}
 		}
 	}
@@ -83,7 +85,9 @@ window.addEventListener("DOMContentLoaded", async () => {
 		if (c === 0x7f) c = 0xa1;
 		try {
 			const decoded = decoder.decode(new Uint8Array([c]));
-			chars.set(decoded, {"type": "han", "x": c % 16, "y": c >> 4});
+			if (!chars.has(decoded)) {
+				chars.set(decoded, {"type": "han", "x": c % 16, "y": c >> 4});
+			}
 		} catch (e) {}
 	}
 
