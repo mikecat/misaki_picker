@@ -1,6 +1,8 @@
 美咲フォントピッカー
 ====================
 
+[https://mikecat.github.io/misaki_picker/](https://mikecat.github.io/misaki_picker/)
+
 [8×8ドット日本語フォント「美咲フォント」](https://littlelimit.net/misaki.htm)およびその関連フォントから指定の文字だけを抜き出した画像を作ります。  
 一部の文字だけを使って表示を行う際、その文字だけを埋め込むのに役立ちます。
 
@@ -26,6 +28,8 @@
 
 Misaki Font Picker
 ==================
+
+[https://mikecat.github.io/misaki_picker/index_en.html](https://mikecat.github.io/misaki_picker/index_en.html)
 
 This tool generates images by picking specified characters from [8×8-dot Japanese font "Misaki Font"](https://littlelimit.net/misaki.htm) and related fonts.  
 This tool should be useful to embed only subset of characters to use for displaying.
